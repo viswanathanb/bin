@@ -1,0 +1,19 @@
+systemctl list-units --all | egrep 'DESCRIPTION|vault|postgresql@|redis|otel|loki|grafana|dnsmasq@|matchbox' | awk '
+    {
+        if ($5 == "DESCRIPTION") {
+            printf "\033[35m"
+            print $0
+            printf "\033[0m"
+        } else if ($4 == "running" || $4 == "active") {
+            printf "\033[32m"
+            print $0
+            printf "\033[0m"
+        } else if ($4 == "exited" || $4 == "failed") {
+            printf "\033[31m"
+            print $0
+            printf "\033[0m"
+        } else {
+            print $0
+        }
+    }
+'
