@@ -5,17 +5,17 @@ kn(){
 
 PROMPT='%F{green}%n%f@%F{blue}%m%f : %F{yellow}%~%f %# '
 
-export PATH=/root/.local/bin:$PATH:/usr/local/go/bin
-export PATH=$PATH:/root/bin
+export PATH=~/.local/bin:$PATH:/usr/local/go/bin
+export PATH=$PATH:~/bin
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 eval "$(direnv hook zsh)"
 
-# source <(kubectl completion zsh)
+source <(kubectl completion zsh)
 source <(kubecolor completion zsh)
 # source <(kubefwd completion zsh)
 source <(talosctl completion zsh)
-# source <(flux completion zsh)
+source <(flux completion zsh)
 
 
 alias gs="git status"

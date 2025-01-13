@@ -18,12 +18,12 @@ etcd() {
     talosctl --talosconfig /root/code/talos/talosconfig -e  192.168.100.100 -n $ip etcd "$@" 
 }
 
-c() {
+cp() {
     local ip="192.168.100.100"
     talosctl --talosconfig /root/code/talos/talosconfig -e  192.168.100.100 -n "$ip" "$@"
 }
 
-cg() {
+cpg() {
     talosctl --talosconfig /root/code/talos/talosconfig -e  192.168.100.100 -n 192.168.100.100 get "$@"
 }
 
