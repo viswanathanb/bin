@@ -18,7 +18,7 @@ etcd() {
     talosctl --talosconfig /root/code/talos/talosconfig -e  192.168.100.100 -n $ip etcd "$@" 
 }
 
-cp() {
+cpx() {
     local ip="192.168.100.100"
     talosctl --talosconfig /root/code/talos/talosconfig -e  192.168.100.100 -n "$ip" "$@"
 }
